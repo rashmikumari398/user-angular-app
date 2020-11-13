@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h1>Create User</h1>
+    <form [formGroup]="createUser"> 
+      <div class="form-group">
+        <label>username</label>
+        <input type="text" class="form-control" formControlName="username">
+        <small *ngIf="createUser.get('username').errors?.required" class="text-danger">this field is required</small>
+      </div>
+      <div class="form-group">
+        <label>age</label>
+        <input type="number" class="form-control" formControlName="age">
+        <small *ngIf="createUser.get('age').errors?.required" class="text-danger">this field is required</small>
+      </div>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" formControlName="firstName">
+        <small *ngIf="createUser.get('firstName').errors?.required" class="text-danger">this field is required</small>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName">
+        
+      </div>
+      <button class="btn btn-primary" type="submit" onsubmit="submit()">Submit</button>
+      <p>{{createUser.value|json}}</p>
+ </form>
+</div>     
